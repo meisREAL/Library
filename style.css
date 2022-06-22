@@ -1,0 +1,101 @@
+body {
+    margin: 0;
+    padding: 0;
+    grid-template-rows: 1fr 1fr 5fr 1fr;
+    background-color: #6096ba;
+}
+
+header {
+    background-color: #8b8c89;
+    padding: 15px;
+    color: #e7ecef;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}
+
+.info {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    background-color: #6096ba;
+}
+
+.info-input {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    margin: 15px;
+    color: #e7ecef;
+}
+
+.btn {
+    grid-column: 1 / 3;
+}
+
+button {
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+input {
+    width: 100%;
+    border-radius: 5px;
+}
+
+footer {
+    background-color: #8b8c89;
+    height: 50px;
+    /* position: absolute;
+    bottom: 0;
+    width: 100%; */
+}
+
+.books {
+    background-color: #a3cef1;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    width: 100%;
+}
+
+.card {
+    border-radius: 10px;
+    background-color: #274c77;
+    color: #e7ecef;
+    margin: 15px;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    width: 350px;
+}
+
+.action {
+    align-self: center;
+    justify-self: center;
+    background-color: green;
+    border-radius: 5px;
+    width: 100px;
+    height: 50px;
+    margin: 10px;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}
+
+.remove {
+    align-self: center;
+    justify-self: center;
+    background-color: #8b8c89;
+    border-radius: 5px;
+    width: 100px;
+    height: 50px;
+    margin: 10px;
+    display: grid;
+    align-items: center;
+    justify-content: center
+}
+
+.read-it {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
