@@ -20,8 +20,15 @@ function addBookToLibrary() {
     myLibrary.push(book);
     displayBook();
 }
+//creates html elements for every object in array
+function displayBook() {
+    // first check if div has elements and remove them all
+    let parentElement = document.querySelector('.books');
+    while (parentElement.hasChildNodes()) {
+        parentElement.removeChild(parentElement.firstChild);
+    }
 
-function displayBook(book) {
+    //for every object in array create card element
     for (i = 0; i < myLibrary.length; i++) {
         console.log(myLibrary[i]);
 
@@ -58,7 +65,7 @@ function displayBook(book) {
         readIt.classList.add('read-it');
         const action = document.createElement('div');
         action.classList.add('action')
-        if (myLibrary[i].read == true) {
+        if (myLibrary[i].read.value == true) {
             action.textContent = "Read";
         } else {
             action.textContent = "not read";
@@ -89,3 +96,5 @@ function displayBook(book) {
         container.appendChild(cardDiv);
     }
 }
+
+displayBook();
