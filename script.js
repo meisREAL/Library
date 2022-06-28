@@ -11,12 +11,14 @@ function Book(title, author, pages, read) {
 
 //takes user input and stores book objects in array
 function addBookToLibrary() {
-    let title = document.getElementById('title');
-    let author = document.getElementById('author');
-    let pages = document.getElementById('pages');
-    let read = document.getElementById('read');
-    let book = new Book(title, author, pages, read)
+    let book = new Book(
+        title = document.getElementById('title').value,
+        author = document.getElementById('author').value,
+        pages = document.getElementById('pages').value,
+        read = document.getElementById('read').value
+    )
     myLibrary.push(book);
+    displayBook();
 }
 
 function displayBook(book) {
