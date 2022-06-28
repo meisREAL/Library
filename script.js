@@ -15,11 +15,12 @@ function addBookToLibrary() {
         title = document.getElementById('title').value,
         author = document.getElementById('author').value,
         pages = document.getElementById('pages').value,
-        read = document.getElementById('read').value
+        read = document.getElementById('read').checked
     )
     myLibrary.push(book);
     displayBook();
 }
+
 //creates html elements for every object in array
 function displayBook() {
     // first check if div has elements and remove them all
@@ -65,7 +66,7 @@ function displayBook() {
         readIt.classList.add('read-it');
         const action = document.createElement('div');
         action.classList.add('action')
-        if (myLibrary[i].read.value == true) {
+        if (myLibrary[i].read == true) {
             action.textContent = "Read";
         } else {
             action.textContent = "not read";
