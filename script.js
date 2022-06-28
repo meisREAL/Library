@@ -19,6 +19,7 @@ function addBookToLibrary() {
     )
     myLibrary.push(book);
     displayBook();
+    makeListeners();
 }
 
 //creates html elements for every object in array
@@ -31,13 +32,13 @@ function displayBook() {
 
     //for every object in array create card element
     for (i = 0; i < myLibrary.length; i++) {
-        console.log(myLibrary[i]);
+
 
         const container = document.querySelector('.books');
 
         const cardDiv = document.createElement('div');
         cardDiv.classList.add('card');
-        cardDiv.setAttribute('data', i);
+        cardDiv.setAttribute('data-index', i);
 
         const heading = document.createElement('h3')
         const para = document.createElement('p')
@@ -74,6 +75,7 @@ function displayBook() {
         }
         const remove = document.createElement('div');
         remove.classList.add('remove');
+        remove.setAttribute('data-index', i);
         remove.textContent = "Remove"
 
         bookTitle.appendChild(headingTitle);
@@ -99,4 +101,20 @@ function displayBook() {
     }
 }
 
+
+
+function makeListeners() {
+    const removeBtn = document.querySelectorAll('.remove');
+    for (i = 0; i < removeBtn.length; i++) {
+        removeBtn[i].addEventListener('click', function () {
+            let card = this.dataset.index;
+            myLibrary.splice(card, 1);
+            displayBook();
+            makeListeners();
+        });
+    }
+}
+
+
 displayBook();
+makeListeners();
