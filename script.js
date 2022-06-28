@@ -37,6 +37,7 @@ function displayBook() {
 
         const cardDiv = document.createElement('div');
         cardDiv.classList.add('card');
+        cardDiv.setAttribute('data', i);
 
         const heading = document.createElement('h3')
         const para = document.createElement('p')

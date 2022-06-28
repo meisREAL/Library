@@ -92,7 +92,18 @@ footer {
     margin: 10px;
     display: grid;
     align-items: center;
-    justify-content: center
+    justify-content: center;
+    box-shadow: 0 5px #6096ba;
+}
+
+.remove:hover {
+    background-color: red;
+}
+
+.remove:active {
+    background-color: red;
+    box-shadow: 0 2px;
+    transform: translateY(4px);
 }
 
 .read-it {
