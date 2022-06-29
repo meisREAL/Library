@@ -68,6 +68,7 @@ function displayBook() {
         readIt.classList.add('read-it');
         const action = document.createElement('div');
         action.classList.add('action')
+        action.setAttribute('data-index', i)
         if (myLibrary[i].read == true) {
             action.textContent = "Read";
         } else {
@@ -102,7 +103,7 @@ function displayBook() {
 }
 
 
-
+//creates event listeners for remove button and numbers them by array index
 function makeListeners() {
     const removeBtn = document.querySelectorAll('.remove');
     for (i = 0; i < removeBtn.length; i++) {
@@ -115,6 +116,22 @@ function makeListeners() {
     }
 }
 
+function changeReadStatus() {
+    const readBtn = document.querySelectorAll('.action');
+    for (i = 0; i < readBtn.length; i++) {
+        readBtn[i].addEventListener('click', function () {
+            let index = this.dataset.index;
+            if (myLibrary[index].read == true) {
+                myLibrary[index].read = false;
+                this.textContent = "not read"
+            } else if (myLibrary[index].read == false) {
+                myLibrary[index].read = true;
+                this.textContent = "Read"
+            }
+        });
+    }
+}
 
 displayBook();
+changeReadStatus();
 makeListeners();
