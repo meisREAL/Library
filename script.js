@@ -20,6 +20,7 @@ function addBookToLibrary() {
     myLibrary.push(book);
     displayBook();
     makeListeners();
+    changeReadStatus();
 }
 
 //creates html elements for every object in array
@@ -112,6 +113,7 @@ function makeListeners() {
             myLibrary.splice(card, 1);
             displayBook();
             makeListeners();
+            changeReadStatus();
         });
     }
 }
